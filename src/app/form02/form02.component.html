@@ -1,0 +1,14 @@
+<form [formGroup]="nameForm" novalidate>
+  <div class="form-group">
+    <label>What is your first name?</label>
+    <input class="form-control" formControlName="firstname">
+  </div>
+  <div class="form-group">
+    <label>What is your last name?</label>
+    <input class="form-control" formControlName="lastname">
+  </div>
+  <button class="btn btn-success" type="submit">Submit</button>
+</form>
+<div *ngIf="nameForm.value.firstname && nameForm.value.lastname">
+  <h3>Hello, {{nameForm.value.firstname}} {{nameForm.value.lastname}}</h3>
+</div>
